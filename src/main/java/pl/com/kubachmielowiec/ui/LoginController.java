@@ -23,7 +23,8 @@ public class LoginController {
     }
 
     @PostMapping
-    public void login(Admin admin) {
-        loginProcess.validate(admin.getUserName(), admin.getPassword());
+    public String login(Admin admin) {
+        loginProcess.validate(admin.getUsername(), admin.getPassword());
+        return "redirect:/webservice";
     }
 }

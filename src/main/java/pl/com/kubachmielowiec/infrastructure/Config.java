@@ -21,4 +21,9 @@ public class Config {
     public LoginProcess loginProcess() {
         return new SimpleLoginProcess();
     }
+
+    @Bean
+    public WebService webService(JobApplicationRepository jobApplicationRepository) {
+        return new StandardWebService(jobApplicationRepository);
+    }
 }
