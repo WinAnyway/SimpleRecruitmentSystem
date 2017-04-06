@@ -2,9 +2,7 @@ package pl.com.kubachmielowiec.infrastructure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.com.kubachmielowiec.application.ApplyingProcess;
-import pl.com.kubachmielowiec.application.JobApplicationRepository;
-import pl.com.kubachmielowiec.application.StandardApplyingProcess;
+import pl.com.kubachmielowiec.application.*;
 
 @Configuration
 public class Config {
@@ -17,5 +15,10 @@ public class Config {
     @Bean
     public JobApplicationRepository jobApplicationRepository() {
         return new JPAJobApplicationRepository();
+    }
+
+    @Bean
+    public LoginProcess loginProcess() {
+        return new SimpleLoginProcess();
     }
 }
